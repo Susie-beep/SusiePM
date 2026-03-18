@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;400;500;700&family=Inter:wght@300;400;500;600&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-morandi-bg: #F4F1ED;
+  --color-morandi-text: #4A4A4A;
+  --color-morandi-muted: #7A7A7A;
+  --color-morandi-green: #A3B1A6;
+  --color-morandi-blue: #9FA8B0;
+  --color-morandi-pink: #C2B8B2;
+  --color-morandi-sand: #D5C7BC;
+  --color-morandi-dark: #3A3A3A;
+  --font-serif: "Noto Serif SC", serif;
+  --font-sans: "Inter", sans-serif;
+}
+
+body {
+  background-color: var(--color-morandi-bg);
+  color: var(--color-morandi-text);
+  font-family: var(--font-sans);
+  position: relative;
+}
+
+/* Subtle oil painting canvas texture overlay */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.4;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  mix-blend-mode: multiply;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-serif);
+}
+
+/* Custom scrollbar for a softer look */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-morandi-bg);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-morandi-sand);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-morandi-pink);
+}
