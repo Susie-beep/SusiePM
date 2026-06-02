@@ -102,7 +102,7 @@ export default function AIAvatar() {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.95 }}
             transition={{ duration: 0.2 }}
-            className="fixed bottom-24 right-8 w-80 sm:w-96 h-[500px] max-h-[70vh] bg-white/90 backdrop-blur-md rounded-2xl shadow-2xl border border-[var(--color-morandi-sand)]/50 flex flex-col overflow-hidden z-50"
+            className="fixed bottom-24 right-8 w-80 sm:w-96 h-[500px] max-h-[70vh] bg-white rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.12)] border border-[var(--color-morandi-sand)] flex flex-col overflow-hidden z-50"
           >
             {/* Header */}
             <div className="bg-[var(--color-morandi-bg)] p-4 border-b border-[var(--color-morandi-sand)]/50 flex justify-between items-center">

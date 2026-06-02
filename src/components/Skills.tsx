@@ -48,7 +48,7 @@ export default function Skills() {
                 {category.items.map((item, sIdx) => (
                   <span 
                     key={sIdx}
-                    className="px-5 py-2.5 bg-white/40 backdrop-blur-sm text-[var(--color-morandi-dark)] text-sm rounded-full border border-[var(--color-morandi-sand)]/50 hover:bg-[var(--color-morandi-sand)]/30 hover:border-[var(--color-morandi-blue)]/50 transition-all duration-300 shadow-sm"
+                    className="px-5 py-2.5 bg-white text-[var(--color-morandi-dark)] text-sm rounded-full border border-[var(--color-morandi-sand)] hover:bg-[var(--color-morandi-bg)] hover:border-[#5C6BC0] hover:text-[#5C6BC0] transition-all duration-300 shadow-sm"
                   >
                     {item}
                   </span>
