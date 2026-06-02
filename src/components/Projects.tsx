@@ -1,7 +1,18 @@
 import { motion } from 'motion/react';
 import { ExternalLink, Bot } from 'lucide-react';
 
-const projects = [
+interface Project {
+  id: number;
+  title: string;
+  subtitle: string;
+  description: string;
+  link: string;
+  color: string;
+  tags: string[];
+  imageUrl?: string;
+}
+
+const projects: Project[] = [
   {
     id: 1,
     title: "AI 营销助手",
@@ -9,7 +20,18 @@ const projects = [
     description: "一款基于大语言模型的智能营销内容生成与策略辅助工具。旨在帮助营销人员快速实现市场洞察、生成差异化文案，并提供投放策略优化建议，极大提升营销内容的流转效率与质量。",
     link: "https://untitled-893232541259.us-west2.run.app/",
     color: "var(--color-morandi-blue)",
-    tags: ["交互Demo", "LLM驱动", "智能文案", "商业洞察"]
+    tags: ["交互Demo", "LLM驱动", "智能文案", "商业洞察"],
+    imageUrl: "/ai-marketing.png"
+  },
+  {
+    id: 2,
+    title: "保险产品知识助手",
+    subtitle: "一线保险业务的可追溯答疑引擎",
+    description: "面向大型保险集团多业务系统（CRM、客服工作台等）的可追溯产品知识助手。系统接入千问大模型采取 RAG 架构，仅基于本地产品资料回答，并清晰展示命中文档及相关性分数，帮助一线销售、客服人员快速确认保障范围、适用场景及话术。",
+    link: "https://insurance-knowledge-assistant-yk6e.vercel.app/",
+    color: "var(--color-morandi-green)",
+    tags: ["MVP", "RAG架构", "千问大模型", "样例知识库"],
+    imageUrl: "/insurance-assistant.png"
   }
 ];
 
@@ -37,15 +59,20 @@ export default function Projects() {
                 <div className="w-2 h-2 rounded-full bg-[#27c93f]"></div>
               </div>
               
-              <div className="flex-1 flex items-center justify-center relative">
-                <div className="absolute inset-0 opacity-20 group-hover:opacity-40 transition-opacity duration-500 bg-gradient-to-br from-transparent to-[var(--color-morandi-blue)]"></div>
-                
-                <motion.div 
-                  whileHover={{ scale: 1.05 }}
-                  className="w-16 h-16 rounded-2xl bg-white shadow-sm border border-[var(--color-morandi-sand)]/50 flex items-center justify-center text-[var(--color-morandi-blue)] z-10"
-                >
-                  <Bot size={28} />
-                </motion.div>
+              <div className="flex-1 flex items-center justify-center relative overflow-hidden">
+                {project.imageUrl ? (
+                  <img src={project.imageUrl} alt={project.title} className="absolute inset-0 w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500" />
+                ) : (
+                  <>
+                    <div className="absolute inset-0 opacity-20 group-hover:opacity-40 transition-opacity duration-500 bg-gradient-to-br from-transparent to-[var(--color-morandi-blue)]"></div>
+                    <motion.div 
+                      whileHover={{ scale: 1.05 }}
+                      className="w-16 h-16 rounded-2xl bg-white shadow-sm border border-[var(--color-morandi-sand)]/50 flex items-center justify-center text-[var(--color-morandi-blue)] z-10"
+                    >
+                      <Bot size={28} />
+                    </motion.div>
+                  </>
+                )}
 
                 <div className="absolute top-4 right-4 bg-white p-2 rounded-full text-[var(--color-morandi-dark)] shadow-[0_2px_8px_rgba(0,0,0,0.08)] opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10 border border-[var(--color-morandi-sand)]/50">
                   <ExternalLink size={16} />
@@ -63,7 +90,7 @@ export default function Projects() {
                   {project.subtitle}
                 </p>
                 <div className="w-full h-[1px] bg-[var(--color-morandi-sand)]/30 mb-4"></div>
-                <p className="text-[var(--color-morandi-muted)]/90 text-sm leading-relaxed line-clamp-3">
+                <p className="text-[var(--color-morandi-muted)]/90 text-sm leading-relaxed">
                   {project.description}
                 </p>
               </div>
