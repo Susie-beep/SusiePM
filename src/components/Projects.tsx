@@ -32,6 +32,16 @@ const projects: Project[] = [
     color: "var(--color-morandi-green)",
     tags: ["MVP", "RAG架构", "千问大模型", "样例知识库"],
     imageUrl: "/insurance-assistant.png"
+  },
+  {
+    id: 3,
+    title: "顾问成长游戏",
+    subtitle: "面向保险代理人的游戏化养成系统",
+    description: "一款面向保险代理人的游戏化成长与养成式训练系统。将高压的保险销售流程转化为可练习、可复盘的闯关体验，帮助代理人提前经历真实的客户沟通场景，沉浸式训练临场判断力、表达力与职业专业边界感。",
+    link: "https://advisor-growth-game.vercel.app/",
+    color: "var(--color-morandi-sand)",
+    tags: ["MVP", "游戏化培训", "情景演练", "顾问养成"],
+    imageUrl: "/advisor_game.png"
   }
 ];
 
