@@ -14,6 +14,15 @@ interface Project {
 
 const projects: Project[] = [
   {
+    id: 4,
+    title: "AI 信贷风险分析",
+    subtitle: "基于 Workflow 的对公信贷报告生成器",
+    description: "展示银行对公信贷风险分析完整流程的 Demo。依托 Workflow 串联规则引擎与大模型，针对供应链融资、科创贷、小微经营贷等多类业务场景动态组装分析模块。实现从数据规整、指标计算审计到结构化辅助决策报告自动生成的一站式风控闭环。",
+    link: "https://credit-risk-analysis-omega.vercel.app/",
+    color: "var(--color-morandi-dark)",
+    tags: ["MVP", "Workflow架构", "多场景适配", "规则与大模型结合"]
+  },
+  {
     id: 1,
     title: "AI 营销助手",
     subtitle: "一站式大模型营销神笔",
